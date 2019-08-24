@@ -1,25 +1,31 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Unit : MonoBehaviour
 {
     // HitPoint
-    public int iHP, EnemyHP;
-
-    // Atacck
-    public int iAT, EnemyAT;
+    public int HP;
+    public int AT;
+    public int HPMax = 100;
+    public Text HPtext;
 
     // Start is called before the first frame update
     void Start()
     {
-        iHP = 20;
-        EnemyHP = 20;
-        iAT = 1;
-        EnemyAT = 1;
+        HP = HPMax;
+        AT = 10;
+        HPtext.text = HP.ToString();
+        
     }
-    public void onDamege(int _damege)
+    public void OnDamege(int _damege)
     {
-        iHP -= _damege;
+        HP -= _damege;
+        if (HP <= 0)
+        {
+            HP = 0;
+        }
+        HPtext.text = HP.ToString();
     }
 }

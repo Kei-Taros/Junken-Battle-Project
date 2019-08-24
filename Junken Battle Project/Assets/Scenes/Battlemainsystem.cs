@@ -1,52 +1,61 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Battlemainsystem : MonoBehaviour
 {
+    //自分と敵の変数定義
+    public Unit Player;
+    public Unit Enemy;
+    public GameObject ResultPanel;
 
-    // JunkenHand
-    public int iHand,EnemyHand;
+    bool IsPlayerturn;
+    bool IsGameOver;
 
-    //JunkenCounter
-    int iGucount = 0,iChokicount =0,iPacount = 0;
-
-    //Player of Turn
-    bool iTurn,EnemyTurn;
-
-    // Start is called before the first frame update
     void Start()
     {
-        iHand = 0;
-        UnityEngine.Random.Range(1,4);
-
+        IsPlayerturn = true;
+        IsGameOver = false;
+        ResultPanel.SetActive(false);
     }
 
-    //GuBotton　process
-    public void GuOnClick()
+    void ViewResult()
     {
-        iHand = 1;
-        iGucount += 1;
+        ResultPanel.SetActive(true);
     }
 
-    //GuBotton　process
-    public void ChokiOnClick()
+    float second = 0f;
+    void Update()
     {
-        iHand = 2; 
-        iChokicount += 1;
+        if (IsGameOver)
+        {
+            ViewResult();
+            ResultPanel.SetActive(true);
+        }
+
+        if (!IsPlayerturn)
+        {
+            second += Time.deltaTime;
+            if (second >= 1f)
+            {
+                second = 0;
+                IsPlayerturn = true;
+                Player.OnDamege(Enemy.AT);
+            }
+        }
+        if (Player.HP == 0 || Enemy.HP == 0)
+        {
+            IsGameOver = true;
+        }
     }
 
-    //GuBotton　process
-    public void PaOnClick()
+    public void PushAttackBottonn()
     {
-        iHand=3;
-        iPacount += 1;
+        if (IsPlayerturn)
+        {
+            Enemy.OnDamege(Player.AT);
+            IsPlayerturn = false;
+        }
     }
-
-    //JunkenJuge
-    public void juge()
-    {
-        
-    }
-
 }
