@@ -8,6 +8,7 @@ public class Battlemainsystem : MonoBehaviour
     //自分と敵の変数定義
     public Unit Player;
     public Unit Enemy;
+    //public Battlemainsystem 
 
     //GameObject
     public GameObject ResultPanel;
@@ -19,13 +20,21 @@ public class Battlemainsystem : MonoBehaviour
     public GameObject DROW;
     public GameObject LastWIN;
     public GameObject LastLOSE;
+
     public Button gu_button;
     public Button choki_button;
     public Button pa_button;
 
+    public Text gu_Level;
+    public Text choki_Level;
+    public Text pa_Level;
+    public Text CantText;
 
     int iHand;
     int EnemyHand;
+    int gu_count;
+    int choki_count;
+    int pa_count;
 
     bool IsPlayerturn;
     bool IsGameOver;
@@ -36,12 +45,15 @@ public class Battlemainsystem : MonoBehaviour
         IsGameOver = false;
         FalseBrothers();
         ButtonTrueBrothes();
+        gu_count = 1;
+        choki_count = 1;
+        pa_count = 1;
+        ViewCounter();
 
     }
 
     IEnumerator ViewResult()
     {
-
         yield return new WaitForSeconds(1f);
         ResultPanel.SetActive(true);
         
@@ -92,26 +104,34 @@ public class Battlemainsystem : MonoBehaviour
     public void PushAttackButtonn(int number)
     {
         if (IsPlayerturn)
-        {
-            
+        { 
             switch (number)
             {
                 case 0:
                     iHand = 0;
                     ButtonfalseSisters();
                     IsPlayerturn = false;
+                    AT_Function();
+                    Gu_Count_Function();
+                    ViewCounter();
                     break;
 
                 case 1:
                     iHand = 1;
                     ButtonfalseSisters();
                     IsPlayerturn = false;
+                    AT_Function();
+                    choki_Count_Function();
+                    ViewCounter();
                     break;
 
                 case 2:
                     iHand = 2;
                     ButtonfalseSisters();
                     IsPlayerturn = false;
+                    AT_Function();
+                    pa_Count_Function();
+                    ViewCounter();
                     break;
 
                 default:
@@ -120,10 +140,69 @@ public class Battlemainsystem : MonoBehaviour
             
         }
     }
+
     IEnumerator IsPlayerturnTrue()
     {
         yield return new WaitForSeconds(2.0f);
         ButtontrueSisters();
+    }
+
+    void Gu_Count_Function()
+    {
+        gu_count += 1;
+        if (gu_count == 4)
+        {
+            gu_button.GetComponent<Button>().interactable = false;
+        }
+        if (choki_count == 4)
+        {
+            choki_count = 1;
+            choki_button.GetComponent<Button>().interactable = true;
+        }
+        if (pa_count == 4)
+        {
+            pa_count = 1;
+            pa_button.GetComponent<Button>().interactable = true;
+        }
+    }
+
+    void choki_Count_Function()
+    {
+        choki_count += 1;
+        if (choki_count == 4)
+        {
+            choki_button.GetComponent<Button>().interactable = false;
+        }
+        if (gu_count == 4)
+        {
+            gu_count = 1;
+            gu_button.GetComponent<Button>().interactable = true;
+        }
+        if (pa_count == 4)
+        {
+            pa_count = 1;
+            pa_button.GetComponent<Button>().interactable = true;
+        }
+    }
+
+    void pa_Count_Function()
+    {
+        pa_count += 1;
+        if (pa_count == 4)
+        {
+            pa_button.GetComponent<Button>().interactable = false;
+        }
+        if (gu_count == 4)
+        {
+            gu_count = 1;
+            gu_button.GetComponent<Button>().interactable = true;
+        }
+        if (choki_count == 4)
+        {
+            choki_count = 1;
+            choki_button.GetComponent<Button>().interactable = true;
+        }
+        
     }
 
     IEnumerator Juge()
@@ -154,21 +233,83 @@ public class Battlemainsystem : MonoBehaviour
             LOSE.SetActive(true);
         }
     }
+    public void AT_Function()
+    {
+        switch (gu_count)
+        {
+            case 1:
+                Player.AT = 1;
+                break;
+
+            case 2:
+                Player.AT = 3;
+                break;
+
+            case 3:
+                Player.AT = 5;
+                break;
+
+            default:
+                break;
+        }
+
+        switch (choki_count)
+        {
+            case 1:
+                Player.AT = 1;
+                break;
+
+            case 2:
+                Player.AT = 3;
+                break;
+
+            case 3:
+                Player.AT = 5;
+                break;
+
+            default:
+                break;
+        }
+
+        switch (pa_count)
+        {
+            case 1:
+                Player.AT = 1;
+                break;
+
+            case 2:
+                Player.AT = 3;
+                break;
+
+            case 3:
+                Player.AT = 5;
+                break;
+
+            default:
+                break;
+        }
+    }
 
     private void EnemyHandy()
     {
-        if (EnemyHand == 0)
+        switch(EnemyHand)
         {
-            Enemy_gu.SetActive(true);
+            case 0:
+                Enemy_gu.SetActive(true);
+                break;
+
+            case 1:
+                Enemy_choki.SetActive(true);
+                break;
+
+            case 2:
+                Enemy_pa.SetActive(true);
+                break;
+
+            default:
+                break;
         }
-        if (EnemyHand == 1)
-        {
-            Enemy_choki.SetActive(true);
-        }
-        if (EnemyHand == 2)
-        {
-            Enemy_pa.SetActive(true);
-        }
+     
     }
 
     public void FalseBrothers()
@@ -200,6 +341,7 @@ public class Battlemainsystem : MonoBehaviour
         pa_button.GetComponent<Button>().interactable = true;
 
     }
+
     void ButtonfalseBrothes()
     {
         gu_button.GetComponent<Button>().interactable = false;
@@ -208,6 +350,7 @@ public class Battlemainsystem : MonoBehaviour
         
 
     }
+
     void ButtontrueSisters()
     {
         gu_button.GetComponent<Button>().enabled = true;
@@ -220,6 +363,13 @@ public class Battlemainsystem : MonoBehaviour
         gu_button.GetComponent<Button>().enabled = false;
         choki_button.GetComponent<Button>().enabled = false;
         pa_button.GetComponent<Button>().enabled = false;
+    }
+
+    void ViewCounter()
+    {
+        gu_Level.text = "LV." + gu_count.ToString();
+        choki_Level.text = "LV." + choki_count.ToString();
+        pa_Level.text = "LV." + pa_count.ToString();
     }
 
 }

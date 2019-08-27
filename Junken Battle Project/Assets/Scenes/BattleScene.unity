@@ -331,7 +331,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Lv.1
+  m_Text: 
 --- !u!222 &215891082
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -450,7 +450,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 192.94336, y: -78.63855}
+  m_AnchoredPosition: {x: 192.94336, y: -70}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &303981714
@@ -1255,7 +1255,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 941784205}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -105.4209, y: -6, z: -76.505005}
+  m_LocalPosition: {x: -105.4209, y: 31, z: -76.505005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 279624346}
@@ -1465,6 +1465,10 @@ MonoBehaviour:
   gu_button: {fileID: 2050211409}
   choki_button: {fileID: 1778895647}
   pa_button: {fileID: 1698036903}
+  gu_Level: {fileID: 215891081}
+  choki_Level: {fileID: 1534984548}
+  pa_Level: {fileID: 2038021246}
+  CantText: {fileID: 0}
 --- !u!4 &1069036788
 Transform:
   m_ObjectHideFlags: 0
@@ -1589,7 +1593,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 192.94336, y: -78.63855}
+  m_AnchoredPosition: {x: 192.94336, y: -66}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1090195545
@@ -2023,7 +2027,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Lv.1
+  m_Text: 
 --- !u!222 &1534984549
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2795,7 +2799,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 192.94342, y: -78.63858}
+  m_AnchoredPosition: {x: 192.94342, y: -54}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1988457219
@@ -3099,7 +3103,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Lv.1
+  m_Text: 
 --- !u!222 &2038021247
 CanvasRenderer:
   m_ObjectHideFlags: 0

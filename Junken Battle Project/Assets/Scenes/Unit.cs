@@ -15,7 +15,7 @@ public class Unit : MonoBehaviour
     void Start()
     {
         HP = HPMax;
-        AT = 5;
+        AT = 1;
         HPtext.text = HP.ToString();
         
     }
