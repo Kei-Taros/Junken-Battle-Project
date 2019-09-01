@@ -32,12 +32,12 @@ public class Unit : MonoBehaviour
             HPtext.text = HP.ToString();
             
         }
-        else if (HP >= 10)
+        if (HP <= 10)
         {
             HPtext.text = HP.ToString();
             HPtext.color = new Color(249f / 255f, 218f / 255f, 7f / 255f);
         }
-        else if (HP >= 5)
+        if (HP <= 5)
         {
             HPtext.text = HP.ToString();
             HPtext.color = new Color(255f / 255f, 0f / 255f, 0f / 255f);
