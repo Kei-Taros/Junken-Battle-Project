@@ -111,6 +111,8 @@ public class Battlemainsystem : MonoBehaviour
     void EnemyHand_Number()
     {
         EnemyHand = Random.Range(0,3);
+        //EnemyHand = 0;
+        Debug.Log(EnemyHand);
         if (Enemy_gu_count == 4)
         {
             Enemy_Gu_count4();
@@ -187,7 +189,7 @@ public class Battlemainsystem : MonoBehaviour
 
     IEnumerator IsPlayerturnTrue()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         ButtontrueSisters();
         ViewCounter();
         Enemy_NG_images();
@@ -360,7 +362,8 @@ public class Battlemainsystem : MonoBehaviour
         if (Enemy_choki_count == 4)
         {
             Enemy_choki_count = 1;
-            Enemy_NG_image.SetActive(false);        }
+            Enemy_NG_image.SetActive(false);
+        }
         if (Enemy_pa_count == 4)
         {
             Enemy_pa_count = 1;
@@ -371,18 +374,19 @@ public class Battlemainsystem : MonoBehaviour
     void Enemy_Gu_count4()
     {
         EnemyHand = Random.Range(0, 2);
+        Debug.Log("Gu4" + EnemyHand);
         switch (EnemyHand)
         {
             case 0:
                 EnemyHand = 1;
                 Enemy_Choki_Count_Function();
-                Enemy_choki.SetActive(false);
+                Enemy_choki.SetActive(true);
                 break;
 
             case 1:
                 EnemyHand = 2;
                 Enemy_Pa_Count_Function();
-                Enemy_choki.SetActive(false);
+                Enemy_pa.SetActive(true);
                 break;
 
             default:
@@ -427,6 +431,7 @@ public class Battlemainsystem : MonoBehaviour
     void Enemy_Choki_count4()
     {
         EnemyHand = Random.Range(0, 2);
+        Debug.Log("Choki4" + EnemyHand);
         switch (EnemyHand)
         {
             case 0:
@@ -483,6 +488,7 @@ public class Battlemainsystem : MonoBehaviour
     void Enemy_Pa_count4()
     {
         EnemyHand = Random.Range(0, 2);
+        Debug.Log("Pa4"+EnemyHand);
         switch (EnemyHand)
         {
             case 0:
