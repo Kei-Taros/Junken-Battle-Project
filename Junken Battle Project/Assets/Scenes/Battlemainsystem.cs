@@ -26,7 +26,6 @@ public class Battlemainsystem : MonoBehaviour
     public GameObject Enemy_choki_image;
     public GameObject Enemy_pa_image;
 
-
     public Button gu_button;
     public Button choki_button;
     public Button pa_button;
