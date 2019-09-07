@@ -415,6 +415,66 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 279624345}
   m_CullTransparentMesh: 0
+--- !u!1 &303438699
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 303438701}
+  - component: {fileID: 303438700}
+  m_Layer: 0
+  m_Name: EnemySystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &303438700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 303438699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e8f8c2082ac34ce0ba0c34074709b14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Enemy: {fileID: 1795991722}
+  Enemy_gu: {fileID: 279624345}
+  Enemy_choki: {fileID: 1087747216}
+  Enemy_pa: {fileID: 1723379354}
+  Enemy_NG_image: {fileID: 902230078}
+  Enemy_gu_image: {fileID: 1340311106}
+  Enemy_choki_image: {fileID: 949788746}
+  Enemy_pa_image: {fileID: 644227432}
+  Enemy_gu_Level: {fileID: 2053904580}
+  Enemy_choki_Level: {fileID: 440716339}
+  Enemy_pa_Level: {fileID: 427491279}
+  EnemyHand: 0
+  Enemy_gu_count: 0
+  Enemy_choki_count: 0
+  Enemy_pa_count: 0
+  Enemy_x: 0
+  Enemy_y: 0
+--- !u!4 &303438701
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 303438699}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 400.2007, y: 355.1489, z: -870.70404}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &303981712
 GameObject:
   m_ObjectHideFlags: 0
@@ -1912,29 +1972,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 1822635974}
   Enemy: {fileID: 1795991722}
+  enemySystem: {fileID: 303438700}
   ResultPanel: {fileID: 828862043}
-  Enemy_gu: {fileID: 279624345}
-  Enemy_choki: {fileID: 1087747216}
-  Enemy_pa: {fileID: 1723379354}
   WIN: {fileID: 1090195543}
   LOSE: {fileID: 303981712}
   DROW: {fileID: 1988457217}
   LastWIN: {fileID: 1993411526}
   LastLOSE: {fileID: 1740651680}
   NG_image: {fileID: 740434725}
-  Enemy_NG_image: {fileID: 902230078}
-  Enemy_gu_image: {fileID: 1340311106}
-  Enemy_choki_image: {fileID: 949788746}
-  Enemy_pa_image: {fileID: 644227432}
   gu_button: {fileID: 2050211409}
   choki_button: {fileID: 1778895647}
   pa_button: {fileID: 1698036903}
   gu_Level: {fileID: 215891081}
   choki_Level: {fileID: 1534984548}
   pa_Level: {fileID: 2038021246}
-  Enemy_gu_Level: {fileID: 2053904580}
-  Enemy_choki_Level: {fileID: 440716339}
-  Enemy_pa_Level: {fileID: 427491279}
 --- !u!4 &1069036788
 Transform:
   m_ObjectHideFlags: 0
